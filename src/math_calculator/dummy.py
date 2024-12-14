@@ -1,5 +1,6 @@
 import math
 
+
 def thales_theorem():
     """Implements Thales' Theorem.
 
@@ -17,7 +18,10 @@ def thales_theorem():
     choice = input("Choose an option (1/2): ")
 
     if choice == "1":
-        x, y, z = map(float, input("Enter the lengths of the sides (x, y, hypotenuse z): ").split())
+        x, y, z = map(
+            float,
+            input("Enter the lengths of the sides (x, y, hypotenuse z): ").split(),
+        )
         if math.isclose(x**2 + y**2, z**2):
             print("The triangle is a right triangle.")
         else:
@@ -31,6 +35,7 @@ def thales_theorem():
 
     else:
         print("Invalid choice.")
+
 
 def pythagoras_theorem():
     """Implements Pythagoras' Theorem.
@@ -64,13 +69,18 @@ def pythagoras_theorem():
 
     elif choice == "3":
         a, b, c = map(float, input("Enter the three sides: ").split())
-        if math.isclose(a**2 + b**2, c**2) or math.isclose(b**2 + c**2, a**2) or math.isclose(c**2 + a**2, b**2):
+        if (
+            math.isclose(a**2 + b**2, c**2)
+            or math.isclose(b**2 + c**2, a**2)
+            or math.isclose(c**2 + a**2, b**2)
+        ):
             print("The sides form a right triangle.")
         else:
             print("The sides do not form a right triangle.")
 
     else:
         print("Invalid choice.")
+
 
 def angle_calculations():
     """Performs angle calculations using trigonometric functions.
@@ -111,6 +121,7 @@ def angle_calculations():
     else:
         print("Invalid choice.")
 
+
 def main():
     """Main function for the Geometry Calculator.
 
@@ -144,8 +155,10 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
+
 if __name__ == "__main__":
     main()
+
 
 # Unit Tests
 def test_thales_theorem():
@@ -153,16 +166,19 @@ def test_thales_theorem():
     assert math.isclose(math.sqrt(5**2 - 4**2), 3)
     assert math.isclose(5**2, 4**2 + 3**2)
 
+
 def test_pythagoras_theorem():
     """Unit test for Pythagoras' Theorem calculations."""
     assert math.isclose(math.sqrt(3**2 + 4**2), 5)
     assert math.isclose(math.sqrt(5**2 - 4**2), 3)
+
 
 def test_angle_calculations():
     """Unit test for angle calculations."""
     assert math.isclose(math.degrees(math.asin(3 / 5)), 36.87, rel_tol=1e-2)
     assert math.isclose(math.degrees(math.acos(4 / 5)), 36.87, rel_tol=1e-2)
     assert math.isclose(math.degrees(math.atan(3 / 4)), 36.87, rel_tol=1e-2)
+
 
 if __name__ == "__main__":
     test_thales_theorem()
