@@ -11,7 +11,7 @@ on:
 jobs:
   sonarcloud:
     name: Run SonarCloud Analysis
-    runs-on: ubuntu-latest
+    runs-on: macos
 
     steps:
       - name: Checkout code
@@ -30,12 +30,12 @@ jobs:
       - name: Install dependencies
         run: pdm install
 
-      - name: Install pytest-cov
-        run: pdm add --dev pytest-cov
+      - name: Install pytest-cov and pytest
+        run: pdm add --dev pytest-cov pytest
 
       - name: Run tests and generate coverage report
         run: |
-          pytest --maxfail=1 --disable-warnings -q --cov=src --cov-report xml
+          pdm run pytest --maxfail=1 --disable-warnings -q --cov=src --cov-report xml
 
       - name: Cache SonarCloud dependencies
         uses: actions/cache@v2
@@ -48,5 +48,5 @@ jobs:
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@v1
         with:
-          organization: your-organization
+          organization: mduroy
           token: ${{ secrets.SONAR_TOKEN }}
