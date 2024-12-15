@@ -14,17 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for better relevancy of analysis
+          fetch-depth: 0  
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # Adjust based on your version of Python
+          python-version: '3.12'  
 
-      - name: Install dependencies
+      - name: Install required Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
           pip install pytest pytest-cov
 
       - name: Run tests with coverage
@@ -34,10 +33,11 @@ jobs:
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
         with:
-          projectKey: "your_project_key"  # Specify your SonarCloud project key
-          organization: "your_organization"  # Specify your SonarCloud organization key
-          projectName: "your_project_name"  # Specify your SonarCloud project name
+          projectKey: "mduroy_Math_Calculator"  # Specify your SonarCloud project key
+          organization: "mduroy"  # Specify your SonarCloud organization key
+          projectName: "Math_Calculator"  # Specify your SonarCloud project name
           sonar.coverageReportPaths: "coverage.xml"  # Path to the generated coverage file
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Your SonarCloud token
+
