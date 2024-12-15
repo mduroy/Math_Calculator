@@ -58,10 +58,13 @@ If this doesn't work, manually activate the virtual environment:
     ```bash
    source .venv/bin/activate  # For Linux/MacOS
    .venv\Scripts\activate     # For Windows
+   
 2. Place yourself in the src/mathcalculator folder using cd
 3. Run the script using:
     ```bash
     python dummy.py
+
+
 ![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=mduroy_Math_Calculator&metric=coverage)
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=mduroy_Math_Calculator)](https://sonarcloud.io/summary/new_code?id=mduroy_Math_Calculator)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=mduroy_Math_Calculator&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=mduroy_Math_Calculator)
