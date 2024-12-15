@@ -23,7 +23,7 @@ It is designed with clean code principles and includes unit tests to ensure reli
 ---
 
 ## Documentation
-Documentation is available uppon cloning the repository by going into ```docs/_build/html/index.html```
+Documentation is available uppon cloning the repository by going into ```docs/_build/html/``` and opening ```index.html``` with the browser of your choice.
 
 ## Getting Started
 
