@@ -48,5 +48,6 @@ jobs:
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@v1
         with:
-          organization: mduroy
-          token: ${{ secrets.SONAR_TOKEN }}
+          projectBaseDir: .
+          args: >
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
