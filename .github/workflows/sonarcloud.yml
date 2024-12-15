@@ -12,24 +12,45 @@ jobs:
   sonarcloud:
     name: Run SonarCloud Analysis
     runs-on: ubuntu-latest
+
     steps:
+      # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up JDK 11 (or your Java version)
-        uses: actions/setup-java@v2
+      # Set up Python (as you are using Python for the project)
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          java-version: '11'
+          python-version: '3.12'  
 
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pdm  # Install pdm (since you're using it)
+          pdm install --dev  # Install dev dependencies including pytest-cov
+
+      # Run tests and generate coverage report in XML format
+      - name: Run tests with coverage
+        run: |
+          pytest --cov=src --cov-report=xml  # Run tests and generate coverage.xml
+
+      # Cache SonarCloud dependencies
       - name: Cache SonarCloud dependencies
         uses: actions/cache@v2
         with:
           path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar-${{ hashFiles('**/*.java') }}
+          key: ${{ runner.os }}-sonar-${{ hashFiles('**/*.py') }}
           restore-keys: |
             ${{ runner.os }}-sonar-
 
+      # Run SonarCloud analysis and provide the coverage report location
       - name: Run SonarCloud
         uses: sonarsource/sonarcloud-github-action@v1
+        with:
+          projectKey: mduroy_Math_Calculator 
+          organization: mduroy  
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
+          SONAR_SCANNER_OPTS: "-Dsonar.python.coverage.reportPaths=coverage.xml"  
