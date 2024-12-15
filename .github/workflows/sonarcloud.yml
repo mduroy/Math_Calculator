@@ -11,7 +11,7 @@ on:
 jobs:
   sonarcloud:
     name: Run SonarCloud Analysis
-    runs-on: macos
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
