@@ -32,40 +32,40 @@ Ensure you have the following installed on your system:
 
 1. **Python**: Version 3.12 or higher.
 2. **PDM**: Python Dependency Manager. Install it via:
-   ```bash
-   pip install pdm
-   ```
+```bash
+pip install pdm
+```
 ### Cloning the Repository
 To get started, clone the repository from GitHub:
-    ```bash
-   git clone https://github.com/<your-username>/Math_Calculator.git
-   cd Math_Calculator
-    ```
+```bash
+git clone https://github.com/<your-username>/Math_Calculator.git
+cd Math_Calculator
+```
 
 ### Installing Dependencies
 Install all required dependencies using pdm:
-    ```bash
-   pdm install
-    ```
+```bash
+pdm install
+```
 This will create a virtual environment and install all necessary libraries listed in the pyproject.toml file.
 
 ### Using the Calculator
 To use the Math Calculator, follow these steps:
 
 1. Activate the virtual environment created by pdm:
-    ```bash
-   pdm venv activate
-    ```
+```bash
+pdm venv activate
+```
 If this doesn't work, manually activate the virtual environment:
-    ```bash
-   source .venv/bin/activate  # For Linux/MacOS
-   .venv\Scripts\activate     # For Windows
-    ```
+```bash
+source .venv/bin/activate  # For Linux/MacOS
+.venv\Scripts\activate     # For Windows
+```
 2. Place yourself in the src/mathcalculator folder using cd
 3. Run the script using:
-    ```bash
-    python dummy.py
-    ```
+```bash
+python dummy.py
+```
 
 ![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=mduroy_Math_Calculator&metric=coverage)
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=mduroy_Math_Calculator)](https://sonarcloud.io/summary/new_code?id=mduroy_Math_Calculator)
