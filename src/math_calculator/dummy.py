@@ -158,30 +158,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# Unit Tests
-def test_thales_theorem():
-    """Unit test for Thales' Theorem calculations."""
-    assert math.isclose(math.sqrt(5**2 - 4**2), 3)
-    assert math.isclose(5**2, 4**2 + 3**2)
-
-
-def test_pythagoras_theorem():
-    """Unit test for Pythagoras' Theorem calculations."""
-    assert math.isclose(math.sqrt(3**2 + 4**2), 5)
-    assert math.isclose(math.sqrt(5**2 - 4**2), 3)
-
-
-def test_angle_calculations():
-    """Unit test for angle calculations."""
-    assert math.isclose(math.degrees(math.asin(3 / 5)), 36.87, rel_tol=1e-2)
-    assert math.isclose(math.degrees(math.acos(4 / 5)), 36.87, rel_tol=1e-2)
-    assert math.isclose(math.degrees(math.atan(3 / 4)), 36.87, rel_tol=1e-2)
-
-
-if __name__ == "__main__":
-    test_thales_theorem()
-    test_pythagoras_theorem()
-    test_angle_calculations()
-    print("All tests passed.")

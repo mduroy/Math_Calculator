@@ -100,6 +100,30 @@ class TestMathCalculator(unittest.TestCase):
             main()
             mock_print.assert_any_call("Goodbye!")
 
+    # Additional tests for thales_theorem
+    def test_thales_theorem_invalid_triangle(self):
+        with patch("builtins.input", side_effect=["1", "2 2 5"]), patch(
+            "builtins.print"
+        ) as mock_print:
+            thales_theorem()
+            mock_print.assert_any_call("The triangle is not a right triangle.")
+
+    # Additional tests for pythagoras_theorem
+    def test_pythagoras_theorem_invalid_triangle(self):
+        with patch("builtins.input", side_effect=["3", "1 1 5"]), patch(
+            "builtins.print"
+        ) as mock_print:
+            pythagoras_theorem()
+            mock_print.assert_any_call("The sides do not form a right triangle.")
+
+    # Additional tests for main
+    def test_main_invalid_choice(self):
+        with patch("builtins.input", side_effect=["5", "4"]), patch(
+            "builtins.print"
+        ) as mock_print:
+            main()
+            mock_print.assert_any_call("Invalid choice. Please try again.")
+
 
 if __name__ == "__main__":
     unittest.main()
