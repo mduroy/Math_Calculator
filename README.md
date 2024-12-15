@@ -1,65 +1,67 @@
-# Math Calculator
-
-Math Calculator is a Python-based utility that provides a suite of mathematical functions. It is designed for educational purposes, showcasing clean code practices, test-driven development, and integration with CI/CD tools like GitHub Actions and SonarCloud.
-
 ## Authors
 
 Math Calculator and the surrounding development environment was developed by Matteo Duroy & Thomas Klapisz in the context of a python development project at ESTACA.
 
+# Math Calculator
+
+Math Calculator is a Python project that provides tools for solving key geometric problems. Currently, the calculator can help with:
+
+- **Thales' Theorem**
+- **Pythagoras' Theorem**
+- **Angle Calculations**
+
+It is designed with clean code principles and includes unit tests to ensure reliability.
+
+---
+
 ## Features
 
-- **Arithmetic Operations**: Trigonometry calculations using Pythagoras' and Thales' theorems.
-- **Robust Testing**: Comprehensive unit tests with over 85% code coverage.
+- **Thales' Theorem**: Calculates the properties of a circle inscribed in a right-angled triangle.
+- **Pythagoras' Theorem**: Calculates the lengths of sides in right-angled triangles.
+- **Angle Calculations**: Compute angles in geometric shapes, including right triangles.
+
+---
 
 ## Getting Started
 
+Follow the steps below to set up and use the Math Calculator on your local machine.
+
 ### Prerequisites
 
-- Python 3.12 or later
-- `pdm` (Python Dependency Manager)
-- Optional: `pytest` and `pytest-cov` for local testing
+Ensure you have the following installed on your system:
 
-### Installation
-
-1. Clone the repository:
+1. **Python**: Version 3.12 or higher.
+2. **PDM**: Python Dependency Manager. Install it via:
    ```bash
+   pip install pdm
+
+### Cloning the Repository
+To get started, clone the repository from GitHub:
+    ```bash
    git clone https://github.com/<your-username>/Math_Calculator.git
    cd Math_Calculator
 
-
-2. Install dependencies using pdm:
+### Installing Dependencies
+Install all required dependencies using pdm:
     ```bash
-    pdm install
+   pdm install
 
-## Running the Application
-To use the math functions, you can directly import the module in your Python code:
+This will create a virtual environment and install all necessary libraries listed in the pyproject.toml file.
+
+### Using the Calculator
+To use the Math Calculator, follow these steps:
+
+1. Activate the virtual environment created by pdm:
     ```bash
-    from src.math_calculator import add, subtract, multiply, divide
-    result = add(2, 3)
-    print(f"The result is {result}")
-
-## Running Tests
-Run the test suite with coverage reporting:
+   pdm venv activate
+If this doesn't work, manually activate the virtual environment:
     ```bash
-    pdm run pytest --cov=src --cov-report=xml
-
-## Continuous Integration
-
-This project uses GitHub Actions for CI/CD. The pipeline:
-
-1. Runs the test suite.
-2. Reports code coverage using pytest-cov.
-3. Integrates with SonarCloud for code quality analysis.
-
-## SonarCloud Integration
-
-SonarCloud provides advanced code analysis and ensures high-quality code. 
-
-Key Metrics
-Code Coverage: 85%+
-Maintainability: A
-Reliability: A
-
+   source .venv/bin/activate  # For Linux/MacOS
+   .venv\Scripts\activate     # For Windows
+2. Place yourself in the src/mathcalculator folder using cd
+3. Run the script using:
+    ```bash
+    python dummy.py
 ![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=mduroy_Math_Calculator&metric=coverage)
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=mduroy_Math_Calculator)](https://sonarcloud.io/summary/new_code?id=mduroy_Math_Calculator)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=mduroy_Math_Calculator&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=mduroy_Math_Calculator)
