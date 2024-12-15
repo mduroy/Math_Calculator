@@ -34,14 +34,14 @@ Math Calculator and the surrounding development environment was developed by Mat
 ## Running the Application
 To use the math functions, you can directly import the module in your Python code:
     ```bash
-  from src.math_calculator import add, subtract, multiply, divide
-  result = add(2, 3)
-  print(f"The result is {result}")
+    from src.math_calculator import add, subtract, multiply, divide
+    result = add(2, 3)
+    print(f"The result is {result}")
 
 ## Running Tests
 Run the test suite with coverage reporting:
     ```bash
-pdm run pytest --cov=src --cov-report=xml
+    pdm run pytest --cov=src --cov-report=xml
 
 ## Continuous Integration
 
