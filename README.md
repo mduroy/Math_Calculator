@@ -22,6 +22,9 @@ It is designed with clean code principles and includes unit tests to ensure reli
 
 ---
 
+## Documentation
+Documentation is available uppon cloning the repository by going into docs/_build/html/index.html
+
 ## Getting Started
 
 Follow the steps below to set up and use the Math Calculator on your local machine.
